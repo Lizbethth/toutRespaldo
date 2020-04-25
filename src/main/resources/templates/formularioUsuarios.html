@@ -21,6 +21,8 @@
     <div class="col-sm-7" style="margin-top: 60px">
         <h1 > ODONTOLOGÍA, MEDICINA & NUTRICIÓN</h1>
     </div>
+    <a class=""><button type="button" class="btn btn-dark" style="position: absolute; top: 0; right: 0;">Principal <br><img th:src="@{principal.png}" height="50" width="50"/></button></a>
+
 </div>
 <div class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <a class=""><button type="button" class="btn btn-dark">Regresar<br><img th:src="@{izq.png}" height="50" width="50"/></button></a>
@@ -36,9 +38,6 @@
 
             <li class="nav-item">
                 <a href="http://localhost:8080/nuevo"><button type="button" class="btn btn-dark">Agregar<br><img th:src="@{agregar.png}" height="50" width="50"/></button></a>
-            </li>
-            <li class="nav-item">
-                <a class=""><button type="button" class="btn btn-dark">Principal <br><img th:src="@{principal.png}" height="50" width="50"/></button></a>
             </li>
             <li class="nav-item">
                 <a class=""><button type="button" class="btn btn-dark">Guardar<br><img th:src="@{guardar.png}" height="50" width="50"/></button></a>
@@ -68,8 +67,7 @@
 <div class="container mt-4" style="font-size: 18px">
 
     <div class="col-sm-12">
-
-        <form th:action="@{/save}" th:object="${usuarios}" method="POST ">
+        <form th:action="@{/save}" th:object="${usuarios}"  method="post">
 
             <div class="card" style=" background: #FFFAE1;">
                 <div class="card-header">
@@ -96,7 +94,8 @@
                 </div>
 
                 <div class="card-footer " style="text-align: center">
-                    <input type="submit" value="Guardar" class="btn btn-info">
+                    <button class="btn btn-info"  value="Guardar">Guardar</button>
+                  <!--  <input type="submit" value="Guardar" class="btn btn-info">-->
                 </div>
 
             </div>

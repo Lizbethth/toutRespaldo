@@ -21,7 +21,7 @@
     <div class="col-sm-7" style="margin-top: 60px">
         <h1 > ODONTOLOGÍA, MEDICINA & NUTRICIÓN</h1>
     </div>
-    <a class=""><button type="button" class="btn btn-dark">Principal <br><img th:src="@{principal.png}" height="50" width="50"/></button></a>
+    <a class=""><button type="button" class="btn btn-dark" style="position: absolute; top: 0; right: 0;">Principal <br><img th:src="@{principal.png}" height="50" width="50"/></button></a>
 
 </div>
 
@@ -44,9 +44,7 @@
                 <!--th:href="@{/nuevo}"-->
                 <a class="" href="http://localhost:8080/nuevo"><button type="button" class="btn btn-dark">Agregar<br><img th:src="@{agregar.png}" height="50" width="50"/></button></a>
             </li>
-            <li class="nav-item">
-                <a class=""><button type="button" class="btn btn-dark">Principal <br><img th:src="@{principal.png}" height="50" width="50"/></button></a>
-            </li>
+
             <li class="nav-item">
                 <a class=""><button type="button" class="btn btn-dark">Guardar<br><img th:src="@{guardar.png}" height="50" width="50"/></button></a>
             </li>
@@ -124,12 +122,12 @@
             </tr>
         </thread>
         <tbody>
-            <tr th:each="usuario:${usuarios}">
-                <td th:text="${usuario.id}"></td>
-                <td th:text="${usuario.nombre}"></td>
-                <td th:text="${usuario.aPaterno}"></td>
-                <td th:text="${usuario.aMaterno}"></td>
-                <td th:text="${usuario.contrasena}"></td>
+            <tr th:each="user:${usuario}">
+                <td th:text="${user.nombre}"></td>
+                <td th:text="${user.nombre}"></td>
+                <td th:text="${user.aPaterno}"></td>
+                <td th:text="${user.aMaterno}"></td>
+                <td th:text="${user.contrasena}"></td>
                 <td>
                     <a class="btn btn-warning">Editar</a>
                     <a class="btn btn-danger">Eliminar</a>
