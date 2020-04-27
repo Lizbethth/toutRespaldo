@@ -123,14 +123,14 @@
         </thread>
         <tbody>
             <tr th:each="user:${usuario}">
-                <td th:text="${user.nombre}"></td>
+                <td th:text="${user.id}"></td>
                 <td th:text="${user.nombre}"></td>
                 <td th:text="${user.aPaterno}"></td>
                 <td th:text="${user.aMaterno}"></td>
                 <td th:text="${user.contrasena}"></td>
                 <td>
-                    <a class="btn btn-warning">Editar</a>
-                    <a class="btn btn-danger">Eliminar</a>
+                    <a th:href="@{/editar/}+${user.id}" class="btn btn-warning">Editar</a>
+                    <a th:onclick="eliminar([[${user.id}]])" class="btn btn-danger">Eliminar</a>
                 </td>
 
             </tr>
@@ -138,5 +138,9 @@
         </tbody>
     </table>
 </div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="funciones.js"></script>
 </body>
 </html>

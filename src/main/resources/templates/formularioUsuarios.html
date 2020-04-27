@@ -67,7 +67,7 @@
 <div class="container mt-4" style="font-size: 18px">
 
     <div class="col-sm-12">
-        <form th:action="@{/save}" th:object="${usuarios}"  method="post">
+        <form th:action="@{/save}" th:object="${usuarios}" method="POST">
 
             <div class="card" style=" background: #FFFAE1;">
                 <div class="card-header">
@@ -75,6 +75,11 @@
 
                 </div>
                 <div class="card-body">
+                    <div class="form-group">
+                        <label>ID</label>
+                        <input th:field="*{id}"  type="text" class="form-control">
+                    </div>
+
                     <div class="form-group">
                         <label>Nombre</label>
                         <input th:field="*{nombre}" type="text" placeholder="Nombre" class="form-control">
@@ -94,8 +99,8 @@
                 </div>
 
                 <div class="card-footer " style="text-align: center">
-                    <button class="btn btn-info"  value="Guardar">Guardar</button>
-                  <!--  <input type="submit" value="Guardar" class="btn btn-info">-->
+                    <!--  <button class="btn btn-info"  value="Guardar">Guardar</button> -->
+                   <input type="submit" value="Guardar" class="btn btn-info">
                 </div>
 
             </div>

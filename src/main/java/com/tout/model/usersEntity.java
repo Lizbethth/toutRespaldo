@@ -6,29 +6,30 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
+
 import javax.swing.*;
 
 @Entity
 @Table(name = "users")
 public class usersEntity {
-    @javax.persistence.Id
+   @javax.persistence.Id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
-    private String aPaterno;
-    private String aMaterno;
+    private String a_Paterno;
+    private String a_Materno;
     private String contrasena;
 
     public usersEntity() {
     }
 
-    public usersEntity(int id, String nombre, String aPaterno, String aMaterno, String contrasena ) {
+    public usersEntity(int id, String nombre, String a_Paterno, String a_Materno, String contrasena ) {
         super();
         this.id=id;
         this.nombre=nombre;
-        this.aMaterno=aMaterno;
-        this.aPaterno=aPaterno;
+        this.a_Materno=a_Materno;
+        this.a_Paterno=a_Paterno;
         this.contrasena=contrasena;
     }
 
@@ -51,26 +52,26 @@ public class usersEntity {
     }
 
     public String getaPaterno() {
-        return aPaterno;
+        return a_Paterno;
     }
 
     public void setaPaterno(String aPaterno) {
-        this.aPaterno = aPaterno;
+        this.a_Paterno = aPaterno;
     }
 
     public String getaMaterno() {
-        return aMaterno;
+        return a_Materno;
     }
 
     public void setaMaterno(String aMaterno) {
-        this.aMaterno = aMaterno;
+        this.a_Materno = aMaterno;
     }
 
     public String getContrasena() {
         return contrasena;
     }
 
-    public void setContrasena(String contraseña) {
+    public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
 }

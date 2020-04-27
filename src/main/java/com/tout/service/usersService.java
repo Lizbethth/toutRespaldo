@@ -10,6 +10,8 @@ import java.util.Optional;
 
 @Service
 public class usersService implements InterfazService {
+
+
     @Autowired
     private usersRepository data;
 
@@ -20,16 +22,21 @@ public class usersService implements InterfazService {
 
     @Override
     public Optional<usersEntity> listarId(int id) {
-        return Optional.empty();
+        return data.findById(id);
     }
 
     @Override
     public int save(usersEntity u) {
-        return 0;
+        int res=0;
+        usersEntity us =  data.save(u);
+        if (!us.equals(null)){
+            res=1;
+        }
+        return res;
     }
 
     @Override
     public void delete(int id) {
-
+    data.deleteById(id);
     }
 }

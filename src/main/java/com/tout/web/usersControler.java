@@ -32,7 +32,7 @@ public class usersControler {
     }
 
 
-    @RequestMapping(path ="/save", method = RequestMethod.POST)
+    @PostMapping("/save")
     public String save(@Valid usersEntity u, Model model) {
         service.save(u);
         return "redirect:/listar";
@@ -42,7 +42,7 @@ public class usersControler {
     public String editar(@PathVariable int id, Model model){
         Optional<usersEntity> user = service.listarId(id);
         model.addAttribute("usuarios",user);
-        return "interfazUsuario";
+        return "formularioUsuarios";
     }
 
     @GetMapping("/eliminar/{id}")
@@ -50,4 +50,6 @@ public class usersControler {
         service.delete(id);
         return "redirect:/listar";
     }
+
+
 }
