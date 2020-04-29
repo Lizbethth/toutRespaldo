@@ -1,7 +1,7 @@
 function eliminar(id) {
     swal({
-        title: "Estas seguro de que desea eliminar este usuario?",
-        text: "si acepta se borraran permanentemente",
+        title : "¿Esta seguro que desea eliminar este usuario?",
+        text: "Esta operación es irreversible",
         icon: "warning",
         buttons: true,
         dangerMode: true,
@@ -13,7 +13,7 @@ function eliminar(id) {
                         console.log(res);
                     }
                 });
-                swal("poof! your imaginary file has  been  deleted!",{
+                swal("Registro eliminado",{
                     icon: "success",
                 }).then((ok)=>{
                     if (ok){
@@ -22,7 +22,7 @@ function eliminar(id) {
 
                 });
             } else {
-                swal("Your imaginary file is safe!");
+                swal("Se canceló la operación");
             }
         });
 }

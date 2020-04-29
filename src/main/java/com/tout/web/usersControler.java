@@ -21,7 +21,7 @@ public class usersControler {
     public String listar(Model model){
         List<usersEntity> u = service.listar();
         model.addAttribute("usuario",u);
-        return "prueba";
+        return "interfazUsuario";
     }
 
     @GetMapping("/nuevo")

@@ -25,7 +25,7 @@
 </div>
 
 <!--EmpiezaBarra de Herramientas -->
-<div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top ">
+<div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top " style="font-family: 'Oswald', sans-serif;color: white; text-align: center">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -56,8 +56,8 @@
 <div class="container col-sm-12">
     <!--<h2>Toggleable Tabs</h2>    <br>-->
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item">
+    <ul class="nav nav-tabs" role="tablist" style="font-family: 'Oswald', sans-serif;color: white; text-align: center">
+        <li class="nav-item" >
             <a class="nav-link active" data-toggle="tab" href="#home">Usuarios</a>
         </li>
         <li class="nav-item">
@@ -66,7 +66,7 @@
     </ul>
 
     <!-- Tab panes -->
-    <div class="tab-content">
+    <div class="tab-content" style="font-family: 'Oswald', sans-serif;color: white; text-align: center">
         <div id="home" class="container tab-pane active"><br>
             <div class="container mt-4" style="font-size: 18px">
                 <table class="table table-bordered table-hover">
@@ -77,6 +77,8 @@
                             <th>Apellido Paterno</th>
                             <th>Apellido Materno</th>
                             <th>Contraseña</th>
+                            <th>Eliminar</th>
+                            <th>Editar</th>
                         </tr>
                     </thread>
                     <tbody>
@@ -86,18 +88,12 @@
                         <td th:text="${user.aPaterno}"></td>
                         <td th:text="${user.aMaterno}"></td>
                         <td th:text="${user.contrasena}"></td>
-                        <td>
-                           <!-- <a th:href="@{/editar/}+${user.id}" class=""><button type="button" class="btn bg-transparent">Editar<br><img th:src="@{editar.png}" height="50" width="50"/></button></a>-->
-                           <!-- <a th:href="@{/editar/}+${user.id}" class="btn btn-warning"><img th:src="@{editar.png}" height="50" width="50"  th:text="Editar"/></a>
-                            <a th:onclick="eliminar([[${user.id}]])" class="btn btn-danger">Eliminar</a>
-                            -->
-                           <!-- <a th:onclick="eliminar([[${user.id}]])" class=""><button type="button" class="btn btn-transparent">Borrar<br><img th:src="@{borrar.png}" height="50" width="50"/></button>-->
-                            <a th:href="@{/editar/}+${user.id}" class="btn btn-warning">Editar</a>
-                            <a th:onclick="eliminar([[${user.id}]])" class="btn btn-danger">Eliminar</a>
-
-
+                        <td >
+                            <a th:href="@{/editar/}+${user.id}"><button type="button" class="btn btn-dark"><img th:src="@{editar.png}" height="50" width="50"/></button></a>
                         </td>
-
+                        <td>
+                            <a th:onclick="eliminar([[${user.id}]])"><button type="button" class="btn btn-dark"><img th:src="@{borrar.png}" height="50" width="50"/></button></a>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -111,5 +107,8 @@
     </div>
 </div>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+<script src="funciones.js"></script>
 </body>
 </html>
