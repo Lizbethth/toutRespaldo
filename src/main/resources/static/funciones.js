@@ -1,6 +1,6 @@
 function eliminar(id) {
     swal({
-        title: "Estas seguro de que desea eliminar?",
+        title: "Estas seguro de que desea eliminar este usuario?",
         text: "si acepta se borraran permanentemente",
         icon: "warning",
         buttons: true,

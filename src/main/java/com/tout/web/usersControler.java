@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.RequestMethod;
+
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
@@ -21,14 +21,14 @@ public class usersControler {
     public String listar(Model model){
         List<usersEntity> u = service.listar();
         model.addAttribute("usuario",u);
-        return "interfazUsuario";
+        return "prueba";
     }
 
     @GetMapping("/nuevo")
     public String agregar(Model model){
 
         model.addAttribute("usuarios",new usersEntity());
-        return "formularioUsuarios";
+        return "crearUsuariosForm";
     }
 
 
@@ -42,7 +42,7 @@ public class usersControler {
     public String editar(@PathVariable int id, Model model){
         Optional<usersEntity> user = service.listarId(id);
         model.addAttribute("usuarios",user);
-        return "formularioUsuarios";
+        return "crearUsuariosForm";
     }
 
     @GetMapping("/eliminar/{id}")
