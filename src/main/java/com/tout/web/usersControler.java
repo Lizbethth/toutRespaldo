@@ -28,7 +28,7 @@ public class usersControler {
     public String agregar(Model model){
 
         model.addAttribute("usuarios",new usersEntity());
-        return "crearUsuariosForm";
+        return "crearUsuarioForm";
     }
 
 
@@ -42,7 +42,7 @@ public class usersControler {
     public String editar(@PathVariable int id, Model model){
         Optional<usersEntity> user = service.listarId(id);
         model.addAttribute("usuarios",user);
-        return "crearUsuariosForm";
+        return "crearUsuarioForm";
     }
 
     @GetMapping("/eliminar/{id}")

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agregar Socio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body style=" background: #dae1e7;">
+<div class="row" style="background: #07d7e3;font-family: 'Oswald';color: white;text-shadow: 1px 1px 1px #000000;">
+    <div class="col-sm-2">
+        <img th:src="@{santelogo.png}" height="100" width="100"/>
+    </div>
+    <div class="col-sm-10" style="margin-top: 30px; font-size: 30px;padding-left: 175px">
+        <label>ODONTOLOGÍA, MEDICINA & NUTRICIÓN</label>
+    </div>
+    <label style="font-size: 15px; position: absolute; top: 0; right: 35px;"> ¡Bienvenid@ usuarioA!</label>
+    <a class="" data-toggle="tooltip" data-placement="left" title="Salir"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;text-shadow: 1px 1px 1px #000000; top: 0; right: 0; font-size: 10px; margin: 0px;padding: 0px;"><img th:src="@{salir.png}" height="30" width="30"/></button></a>
+    <a class=""data-toggle="tooltip" data-placement="left" title="Principal"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;text-shadow: 1px 1px 1px #000000; top: 33px; right: 0; font-size: 10px; margin: 0px;padding: 0px;"><img th:src="@{principal.png}" height="30" width="30"/></button></a>
+    <!--<a class=""data-toggle="tooltip" data-placement="left" title="Imprimir"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;font-size: 10px;top: 66px; right: 0;margin: 0px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{impresora.png}" height="30" width="30"/></button></a>
+--></div>
+
+<div class="row bg-dark">
+    <ul class="nav nav-tabs" role="tablist" style="font-family: 'Oswald', sans-serif; text-align: center;text-shadow: 1px 0px 0px #000000;">
+        <li class="nav-item" >
+            <a class="nav-link activeb bg-dark" data-toggle="tab" href="#home" style="color: white;">Usuarios</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link bg-dark" data-toggle="tab" href="#menu1" style=";color: white;">Socios</a>
+        </li>
+    </ul>
+
+    <form class="form-inline">
+        <a class="" href="http://localhost:8080/nuevo" data-toggle="tooltip" data-placement="left" title="Agregar"><button type="button" class="btn btn-dark btn-xs" style="font-size: 10px;padding: 0px;text-shadow: 1px 1px 1px #000000;position: absolute;top: 105px; right: 200px;"><img th:src="@{agregar.png}" height="30" width="30"/></button></a>
+        <input class="form-control mr-sm-2 " style="position: absolute;top: 105px; right: 35px;font-size: 10px; margin-right: auto" type="search" placeholder="Buscar" aria-label="Search">
+        <a class="btn btn-dark btn-xs" style="padding: 0px;text-shadow: 1px 1px 1px #000000;position: absolute;top: 105px; right: 3px;"><img th:src="@{buscar.png}" height="30" width="30"/></a>
+    </form>
+</div>
+<!--Empieza formulario-->
+<h2 style="text-align:center;font-family: 'Oswald">Agregar usuario</h2>
+<form  class="m-5" style="font-family: 'Oswald';">
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputnombre">Nombre</label>
+            <input type="text" class="form-control" id="inputnombre" placeholder="Nombre(s)">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputap">Apellido Paterno</label>
+            <input type="text" class="form-control" id="inputap">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputam">Apellido Materno</label>
+            <input type="text" class="form-control" id="inputam">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <label for="inputArea">Área</label>
+            <select id="inputArea" class="form-control">
+                <option>Seleccionar</option>
+                <option>Odontología</option>
+                <option>Otra</option>
+            </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="inputEsp">Especialidad</label>
+            <select id="inputEsp" class="form-control">
+                <option>Seleccionar</option>
+                <option>Dentista</option>
+                <option>Ortodoncista</option>
+            </select>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputH">Horario</label>
+            <select id="inputH" class="form-control">
+                <option>Seleccionar</option>
+                <option>Lunes a Viernes 2:00 a 8:00pm y Sábados 8:00 a 12:00pm</option>
+                <option>Lunes a Sábado 8:00 am a 2:00pm</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputTel">Teléfono</label>
+            <input type="text" class="form-control" id="inputTel">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="inputPassword">Contraseña</label>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
+            <input type="password" class="form-control" id="inputPassword2" placeholder="Contraseña">
+            <button type="submit" class="btn btn-primary mb-2">Confirmar contraseña</button>
+
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+</form>
+</body>
+</html>

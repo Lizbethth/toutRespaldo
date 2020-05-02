@@ -1,3 +1,10 @@
+
+$(document).ready(function() {
+    $('#tusuarios').DataTable();
+});
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
 function eliminar(id) {
     swal({
         title : "¿Esta seguro que desea eliminar este usuario?",
@@ -25,4 +32,5 @@ function eliminar(id) {
                 swal("Se canceló la operación");
             }
         });
+
 }
