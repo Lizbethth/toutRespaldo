@@ -36,64 +36,72 @@
         </li>
     </ul>
 
-    <form class="form-inline">
+    <div class="form-inline">
         <a class="" href="http://localhost:8080/nuevo" data-toggle="tooltip" data-placement="left" title="Agregar"><button type="button" class="btn btn-dark btn-xs" style="font-size: 10px;padding: 0px;text-shadow: 1px 1px 1px #000000;position: absolute;top: 105px; right: 200px;"><img th:src="@{agregar.png}" height="30" width="30"/></button></a>
         <input class="form-control mr-sm-2 " style="position: absolute;top: 105px; right: 35px;font-size: 10px; margin-right: auto" type="search" placeholder="Buscar" aria-label="Search">
         <a class="btn btn-dark btn-xs" style="padding: 0px;text-shadow: 1px 1px 1px #000000;position: absolute;top: 105px; right: 3px;"><img th:src="@{buscar.png}" height="30" width="30"/></a>
-    </form>
+    </div>
 </div>
 <!--Empieza formulario-->
 <h2 style="text-align:center;font-family: 'Oswald">Agregar usuario</h2>
-<form  class="m-5" style="font-family: 'Oswald';">
+<form th:action="@{/saveSocio}" th:object="${usuarioSocio}" method="POST" class="m-5" style="font-family: 'Oswald';">
     <div class="form-row">
+        <div class="col-sm-1">  <input th:field="*{id}"  type="text" class="form-control" ena></div>
+    </div>
+    <div class="form-row">
+
         <div class="form-group col-md-4">
+
+
             <label for="inputnombre">Nombre</label>
-            <input type="text" class="form-control" id="inputnombre" placeholder="Nombre(s)">
+            <input th:field="*{nombre}" type="text" class="form-control" id="inputnombre" placeholder="Nombre(s)" required="">
         </div>
         <div class="form-group col-md-4">
             <label for="inputap">Apellido Paterno</label>
-            <input type="text" class="form-control" id="inputap">
+            <input th:field="*{apellidoPaterno}" type="text" class="form-control" id="inputap" required="">
         </div>
         <div class="form-group col-md-4">
             <label for="inputam">Apellido Materno</label>
-            <input type="text" class="form-control" id="inputam">
+            <input th:field="*{apellidoMaterno}" type="text" class="form-control" id="inputam" required="">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-3">
             <label for="inputArea">Área</label>
-            <select id="inputArea" class="form-control">
-                <option>Seleccionar</option>
-                <option>Odontología</option>
-                <option>Otra</option>
+            <select th:field="*{area}" id="inputArea" class="form-control" required="">
+                <option value="">Seleccionar</option>
+                <option value="Odontología">Odontología</option>
+                <option value="Otra">Otra</option>
+
             </select>
         </div>
         <div class="form-group col-md-3">
             <label for="inputEsp">Especialidad</label>
-            <select id="inputEsp" class="form-control">
-                <option>Seleccionar</option>
-                <option>Dentista</option>
-                <option>Ortodoncista</option>
+            <select th:field="*{especialidad}" id="inputEsp" class="form-control" required="">
+                <option value="Seleccionar">Seleccionar</option>
+                <option value="Denstista">Dentista</option>
+                <option value="Ortodoncista">Ortodoncista</option>
             </select>
         </div>
         <div class="form-group col-md-4">
             <label for="inputH">Horario</label>
-            <select id="inputH" class="form-control">
-                <option>Seleccionar</option>
-                <option>Lunes a Viernes 2:00 a 8:00pm y Sábados 8:00 a 12:00pm</option>
-                <option>Lunes a Sábado 8:00 am a 2:00pm</option>
+            <select th:field="*{horarioDeLabor}" id="inputH" class="form-control" required="">
+                <option value="Seleccionar" >Seleccionar</option>
+                <option value="Lunes a Viernes 2:00 a 8:00pm y Sábados 8:00 a 12:00pm">Lunes a Viernes 2:00 a 8:00pm y Sábados 8:00 a 12:00pm</option>
+                <option value="Lunes a Sábado 8:00 am a 2:00pm">Lunes a Sábado 8:00 am a 2:00pm</option>
             </select>
         </div>
         <div class="form-group col-md-2">
             <label for="inputTel">Teléfono</label>
-            <input type="text" class="form-control" id="inputTel">
+            <input th:field="*{telefono}" type="text" class="form-control" id="inputTel" required="">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-12">
-            <label for="inputPassword">Contraseña</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
+            <label >Contraseña</label>
+            <input th:field="*{contrasena}" type="password" class="form-control"  placeholder="Contraseña" required="">
             <input type="password" class="form-control" id="inputPassword2" placeholder="Contraseña">
+
             <button type="submit" class="btn btn-primary mb-2">Confirmar contraseña</button>
 
         </div>
