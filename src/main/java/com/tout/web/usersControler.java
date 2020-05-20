@@ -42,6 +42,7 @@ public class usersControler {
 
     @PostMapping("/save")
     public String save(@Valid usersEntity u, Model model) {
+
         service.save(u);
         return "redirect:/listar";
     }
