@@ -1,8 +1,10 @@
 package com.tout.web;
 
+import com.tout.model.patientsEntity;
 import com.tout.model.userSocio;
 import com.tout.model.usersEntity;
 import com.tout.service.InterfazService;
+import com.tout.service.InterfazServicePatients;
 import com.tout.service.InterfazServiceSocio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +20,7 @@ import java.util.Optional;
 public class usersControler {
     @Autowired
     private InterfazService service;
+
     @Autowired
     private InterfazServiceSocio serviciosSocio;
 
@@ -36,7 +39,6 @@ public class usersControler {
         model.addAttribute("usuarios",new usersEntity());
         return "crearUsuarioForm";
     }
-
 
     @PostMapping("/save")
     public String save(@Valid usersEntity u, Model model) {
@@ -90,5 +92,6 @@ public class usersControler {
         serviciosSocio.delete(id);
         return "redirect:/listar";
     }
+
 
 }

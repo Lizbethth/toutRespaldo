@@ -11,8 +11,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-
 </head>
 <body style=" background: #dae1e7;">
     <div class="row" style="background: #07d7e3;font-family: 'Oswald';color: white;text-shadow: 1px 1px 1px #000000;">
@@ -26,7 +24,8 @@
         <a class="" data-toggle="tooltip" data-placement="left" title="Salir"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;text-shadow: 1px 1px 1px #000000; top: 0; right: 0; font-size: 10px; margin: 0px;padding: 0px;"><img th:src="@{salir.png}" height="30" width="30"/></button></a>
         <a class=""data-toggle="tooltip" data-placement="left" title="Principal"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;text-shadow: 1px 1px 1px #000000; top: 33px; right: 0; font-size: 10px; margin: 0px;padding: 0px;"><img th:src="@{principal.png}" height="30" width="30"/></button></a>
         <!--<a class=""data-toggle="tooltip" data-placement="left" title="Imprimir"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;font-size: 10px;top: 66px; right: 0;margin: 0px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{impresora.png}" height="30" width="30"/></button></a>
-    --></div>
+    -->
+    </div>
 
     <div class="row bg-dark justify-content-between">
         <ul class="nav nav-tabs" role="tablist" style="font-family: 'Oswald', sans-serif; text-align: center;text-shadow: 1px 0px 0px #000000;">
@@ -82,7 +81,6 @@
                             <th>Contraseña</th>
                             <th>Acción</th>
                            <!-- <th>Eliminar</th>-->
-
                         </tr>
                     </thread>
                     <tbody style="background-color: white; text-align: center;padding: 0;">
@@ -95,7 +93,7 @@
                         <td th:text="${user.aPaterno}"></td>
                         <td th:text="${user.aMaterno}"></td>
                         <td th:text="${user.contrasena}"></td>
-                        <td >
+                        <td>
                             <a th:href="@{/editar/}+${user.id}" data-toggle="tooltip" data-placement="left" title="Editar"><button type="button" class="btn btn-dark" style="font-size: 10px;padding: 0;align: right;"><img th:src="@{editar.png}" height="25" width="25"/></button></a>
                             <a th:onclick="eliminar([[${user.id}]])"data-toggle="tooltip" data-placement="left" title="Borrar"><button type="button" class="btn btn-dark" style="font-size: 10px;padding: 0;align: right;"><img th:src="@{borrar.png}" height="25" width="25"/></button></a>
                         </td>
