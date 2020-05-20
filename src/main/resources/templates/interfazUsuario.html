@@ -5,12 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
 
 
 </head>
@@ -40,37 +43,25 @@
 
 
         <form class="form-inline col-3">
-            <a class="" href="http://localhost:8080/nuevo" data-toggle="tooltip" data-placement="left" title="Agregar Usuario"><button type="button" class="btn btn-dark btn-xs " style="font-size: 10px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{agregar.png}" height="30" width="30"/></button></a><br>
-            <a class="" href="http://localhost:8080/nuevoSocio" data-toggle="tooltip" data-placement="left" title="Agregar Socio"><button  type="button" class="btn btn-dark " style="font-size: 10px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{add_50px.png}" height="25" width="25"/></button></a>
+            <a class="" href="http://localhost:8080/nuevo" data-toggle="tooltip" data-placement="left" title="Agregar Usuario"><button type="button" class="btn btn-dark btn-xs " style="font-size: 10px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{usuario.png}" height="40" width="30"/></button></a><br>
+            <a class="" href="http://localhost:8080/nuevoSocio" data-toggle="tooltip" data-placement="left" title="Agregar Socio"><button  type="button" class="btn btn-dark " style="font-size: 10px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{socio.png}" height="40" width="30"/></button></a>
             <a href="http://localhost:8080/"></a>
             <input class="form-control " type="search" placeholder="Buscar" aria-label="Search">
-            <a class="btn btn-dark btn-xs" style="padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{buscar.png}" height="30" width="30"/></a>
+            <a class="btn btn-dark btn-xs" style="text-shadow: 1px 1px 1px #000000; margin-left: 5px"><img th:src="@{buscar.png}" height="30" width="30"/></a>
         </form>
     </div>
     <!--EmpiezaBarra de Herramientas -->
-   <!-- <div class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top " style="font-family: 'Oswald';text-shadow: 1px 1px 1px #000000;color: white; text-align: center;font-size: 10px; padding: 0px" >
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-
-                 <li class="nav-item">
-                     <a class="" href="http://localhost:8080/nuevo"><button type="button" class="btn btn-dark btn-xs" style="font-size: 10px;padding: 0px;text-shadow: 1px 1px 1px #000000;">Agregar<br><img th:src="@{agregar.png}" height="45" width="45"/></button></a>
-                 </li>
-             </ul>
-        </div>
-        </nav>
-    </div>-->
 
     <!--Termina Barra de Herramientas -->
 
 <br><br>
-<div class="container col-sm-12 ">
+<div class="container col-sm-12 text-center " style="font-family: 'Oswald'">
     <!-- Tab panes -->
+
     <div class="tab-content" style="font-family: 'Oswald';">
         <div id="home" class="container-fluid tab-pane active">
+            <h1>REGISTROS DE USUARIOS</h1>
             <div style="font-size: 18px">
                 <table class="table table-hover  table-condensed" id="tablaG"><!--table-bordered table-striped   nth-child(even) hover td style="background-color: #ddd;td-background-color: #369681-->
                     <thread>
@@ -105,8 +96,9 @@
             </div>
         </div>
 
-        <div id="menu1" class="container-fluid tab-pane fade">
-            <div style="font-size: 18px">
+        <div id="menu1" class="container-fluid tab-pane fade" style="font-size: 18px">
+            <h1>REGISTRO SOCIO</h1>
+            <div >
                 <table class=" table table-hover  table-condensed" id="tsocios"><!--table-bordered table-striped   nth-child(even) hover td style="background-color: #ddd;td-background-color: #369681-->
                     <thread>
                         <tr style="color: white; background-color: #05dfd7;text-shadow: 1px 1px 1px #000000; text-align: center">
@@ -151,19 +143,9 @@
 </div>
 
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script> -->
+
 <script src="funciones.js"></script>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
-
 </body>
 </html>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#tablaG').DataTable();
-    } );
-
-</script>
