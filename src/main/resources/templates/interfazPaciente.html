@@ -23,14 +23,33 @@
         <a class=""data-toggle="tooltip" data-placement="left" title="Principal"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;text-shadow: 1px 1px 1px #000000; top: 33px; right: 0; font-size: 10px; margin: 0px;padding: 0px;"><img th:src="@{principal.png}" height="30" width="30"/></button></a>
         <!--<a class=""data-toggle="tooltip" data-placement="left" title="Imprimir"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;font-size: 10px;top: 66px; right: 0;margin: 0px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{impresora.png}" height="30" width="30"/></button></a>-->
     </div>
-    <div class="row bg-dark d-flex flex-row-reverse" >
+    <div class="row bg-dark justify-content-between">
+    <ul class="nav nav-tabs" role="tablist" style="font-family: 'Oswald', sans-serif; text-align: center;text-shadow: 1px 0px 0px #000000;">
+        <li class="nav-item" >
+            <a class="nav-link activeb bg-dark" data-toggle="tab" href="#home" style="color: white;"></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link bg-dark" data-toggle="tab" href="#menu1" style=";color: white;"></a>
+        </li>
+    </ul>
+
+    <div class="form-inline">
+        <a class="" href="/nuevoPaciente" data-toggle="tooltip" data-placement="left" title="Agregar Paciente"><button  type="button" class="btn btn-dark " style="font-size: 10px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{add_50px.png}" height="25" width="25"/></button></a>
+        <input class="form-control mr-sm-2 " style="top: 105px; right: 35px;font-size: 10px; margin-right: auto" type="search" placeholder="Buscar" aria-label="Search">
+        <a class="btn btn-dark btn-xs" style="text-shadow: 1px 1px 1px #000000;top: 105px; margin-right: 5px"><img th:src="@{buscar.png}" height="30" width="30"/></a>
+    </div>
+    </div>
+
+
+
+   <!-- <div class="row bg-dark d-flex flex-row-reverse" >
         <form class="form-inline col-3">
-            <a class="" href="http://localhost:8080/nuevoPaciente" data-toggle="tooltip" data-placement="left" title="Agregar Paciente"><button  type="button" class="btn btn-dark " style="font-size: 10px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{add_50px.png}" height="25" width="25"/></button></a>
+            <a class="" href="/nuevoPaciente" data-toggle="tooltip" data-placement="left" title="Agregar Paciente"><button  type="button" class="btn btn-dark " style="font-size: 10px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{add_50px.png}" height="25" width="25"/></button></a>
             <a href="http://localhost:8080/"></a>
             <input class="form-control " type="search" placeholder="Buscar" aria-label="Search">
             <a class="btn btn-dark btn-xs" style=" padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{buscar.png}" height="30" width="30"/></a>
         </form>
-    </div>
+    </div>-->
 
 <!--
 <div class="row" >
@@ -83,7 +102,7 @@
                             <td th:text="${patient.ocupacion}"></td>
                             <td th:text="${patient.telefono}"></td>
                             <td>
-                                <a th:href="@{/editar/}+${patient.id}" data-toggle="tooltip" data-placement="left" title="Editar"><button type="button" class="btn btn-dark" style="font-size: 10px;padding: 0;align: right;"><img th:src="@{editar.png}" height="25" width="25"/></button></a>
+                                <a th:href="@{/editarPac/}+${patient.id}" data-toggle="tooltip" data-placement="left" title="Editar"><button type="button" class="btn btn-dark" style="font-size: 10px;padding: 0;align: right;"><img th:src="@{editar.png}" height="25" width="25"/></button></a>
                                 <a th:onclick="eliminarPac([[${patient.id}]])"data-toggle="tooltip" data-placement="left" title="Borrar"><button type="button" class="btn btn-dark" style="font-size: 10px;padding: 0;align: right;"><img th:src="@{borrar.png}" height="25" width="25"/></button></a>
                             </td>
                         </tr>

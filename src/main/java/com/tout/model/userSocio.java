@@ -44,9 +44,6 @@ public class userSocio {
 
     }
 
-
-
-
     public int getId() {
         return id;
     }

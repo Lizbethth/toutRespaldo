@@ -20,78 +20,73 @@
 
 </head>
 <body style=" background: #dae1e7;">
-    <div class="row" style="margin-bottom:0; background: #07d7e3;font-family: 'Oswald', sans-serif;color: white; text-align: center">
-        <div class="col-sm-2">
-            <img th:src="@{santelogo.png}" height="200" width="200"/>
-        </div>
-        <div class="col-sm-7" style="margin-top: 60px">
-            <h1 > ODONTOLOGÍA, MEDICINA & NUTRICIÓN</h1>
-        </div>
-        <a class=""><button type="button" class="btn btn-dark" style="position: absolute; top: 0; right: 0;">Principal <br><img th:src="@{principal.png}" height="50" width="50"/></button></a>
+<div class="row" style="background: #07d7e3;font-family: 'Oswald';color: white;text-shadow: 1px 1px 1px #000000;">
+    <div class="col-sm-2">
+        <img th:src="@{santelogo.png}" height="100" width="100"/>
     </div>
-
-    <!--EmpiezaBarra de Herramientas -->
-    <div class="row bg-dark justify-content-between">
-        <ul class="nav nav-tabs" role="tablist" style="font-family: 'Oswald', sans-serif; text-align: center;text-shadow: 1px 0px 0px #000000;">
-            <li class="nav-item" >
-                <a class="nav-link activeb bg-dark" data-toggle="tab" href="#home" style="color: white;">Usuarios</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link bg-dark" data-toggle="tab" href="#menu1" style=";color: white;">Socios</a>
-            </li>
-        </ul>
-
-        <div class="form-inline">
-            <a class="" href="http://localhost:8080/nuevo" data-toggle="tooltip" data-placement="left" title="Agregar Usuario"><button type="button" class="btn btn-dark btn-xs " style="font-size: 10px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{usuario.png}" height="40" width="30"/></button></a><br>
-            <a class="" href="http://localhost:8080/nuevoSocio" data-toggle="tooltip" data-placement="left" title="Agregar Socio"><button  type="button" class="btn btn-dark " style="font-size: 10px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{socio.png}" height="40" width="30"/></button></a>
-            <input class="form-control mr-sm-2 " style="top: 105px; right: 35px;font-size: 10px; margin-right: auto" type="search" placeholder="Buscar" aria-label="Search">
-            <a class="btn btn-dark btn-xs" style="text-shadow: 1px 1px 1px #000000;top: 105px; right: 3px;"><img th:src="@{buscar.png}" height="30" width="30"/></a>
-        </div>
+    <div class="col-sm-10" style="margin-top: 30px; font-size: 30px;padding-left: 175px">
+        <label>ODONTOLOGÍA, MEDICINA & NUTRICIÓN</label>
     </div>
-    <!--TerminaBarra de Herramientas -->
+    <label style="font-size: 15px; position: absolute; top: 0; right: 35px;"> ¡Bienvenid@ usuarioA!</label>
+    <a class="" data-toggle="tooltip" data-placement="left" title="Salir"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;text-shadow: 1px 1px 1px #000000; top: 0; right: 0; font-size: 10px; margin: 0px;padding: 0px;"><img th:src="@{salir.png}" height="30" width="30"/></button></a>
+    <a class=""data-toggle="tooltip" data-placement="left" title="Principal"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;text-shadow: 1px 1px 1px #000000; top: 33px; right: 0; font-size: 10px; margin: 0px;padding: 0px;"><img th:src="@{principal.png}" height="30" width="30"/></button></a>
+    <!--<a class=""data-toggle="tooltip" data-placement="left" title="Imprimir"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;font-size: 10px;top: 66px; right: 0;margin: 0px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{impresora.png}" height="30" width="30"/></button></a>
+--></div>
 
-    <h2 style="text-align:center;font-family: 'Oswald">Agregar usuario</h2>
-    <button href="http://localhost:8080/listar" type="button" style="margin-left: 5px" class="btn btn-info"><i class="far fa-arrow-alt-circle-left"></i>Regresar</button>
-    <div class="container mt-4" style="font-family: 'Oswald', sans-serif;font-size: 18px">
+<div class="row bg-dark justify-content-between">
+    <ul class="nav nav-tabs" role="tablist" style="font-family: 'Oswald', sans-serif; text-align: center;text-shadow: 1px 0px 0px #000000;">
+        <li class="nav-item" >
+            <a class="nav-link activeb bg-dark" data-toggle="tab" href="#home" style="color: white;"></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link bg-dark" data-toggle="tab" href="#menu1" style=";color: white;"></a>
+        </li>
+    </ul>
 
-        <form id="formCheckPassword" th:action="@{/save}" th:object="${usuarios}" method="POST">
-            <div class="row">
+    <div class="form-inline">
+        <a class="" href="/nuevo" data-toggle="tooltip" data-placement="left" title="Agregar Usuario"><button type="button" class="btn btn-dark btn-xs " style="font-size: 10px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{usuario.png}" height="40" width="40"/></button></a><br>
+        <a class="" href="/nuevoSocio" data-toggle="tooltip" data-placement="left" title="Agregar Socio"><button  type="button" class="btn btn-dark " style="font-size: 10px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{socio.png}" height="40" width="40"/></button></a>
+        <input class="form-control mr-sm-2 " style="top: 105px; right: 35px;font-size: 10px; margin-right: auto" type="search" placeholder="Buscar" aria-label="Search">
+        <a class="btn btn-dark btn-xs" style="text-shadow: 1px 1px 1px #000000;top: 105px; margin-right: 5px"><img th:src="@{buscar.png}" height="30" width="30"/></a>
+    </div>
+</div>
 
-
-
-
-                        <input style="display: none" th:field="*{id}"  type="text" class="form-control">
-
-
-
-                    <div class="col-sm-3">
-                        <label>NOMBRE</label>
-                        <input th:field="*{nombre}" style="text-transform: uppercase" type="text" placeholder="Nombre" class="form-control" required="">
-                    </div>
-                    <div class="col-sm-3">
-                        <label>APELLIDO PATERNO</label>
-                        <input th:field="*{aPaterno}" style="text-transform: uppercase" type="text" placeholder="Apellido Paterno" class="form-control" required="">
-                    </div>
-                    <div class="col-sm-3">
-                        <label>APELLIDO MATERNO</label>
-                        <input th:field="*{aMaterno}" style="text-transform: uppercase" type="text" placeholder="Apellido Materno" class="form-control" required="">
-                    </div>
-                    <div class="col-sm-5">
-                        <label>CONTRASEÑA</label>
-                        <input id="password" name="password"
-                               type="password"  class="form-control" >
-                    </div>
-                <div class="col-sm-4">
-                    <label>CONFIRMAR CONTRASEÑA</label>
-                    <input id="cfmPassword" name="cfmPassword" th:field="*{contrasena}" type="password"  class="form-control">
+    <h2 style="text-align:center;font-family: 'Oswald">Agregar usuario tipo administrador o recepcionista</h2>
+        <form id="formCheckPassword" class="m-5" th:action="@{/save}" th:object="${usuarios}" method="POST" style="font-family: 'Oswald';">
+            <div class="form-row">
+                <a href="/listar" class="btn btn-info" role="button" ><i class="far fa-arrow-alt-circle-left"></i>Regresar</a>
+                <input class="btn btn-secondary" type="reset" value="Borrar información" style="margin-left: 5px;">
+                <div class="col-sm-1">
+                    <button  th:field="*{id}"  type="text" class="form-control" style="display: none"/>
                 </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="inputnombre">Nombre</label>
+                    <input maxlength="10" th:field="*{nombre}" style="text-transform: uppercase" type="text" class="form-control" id="inputnombre" placeholder="Nombre(s)" required>
                 </div>
-
-
-                   <input type="submit" value="Guardar" class="btn btn-info">
-
-
-
+                <div class="form-group col-md-4">
+                    <label for="inputap">Apellido Paterno</label>
+                    <input maxlength="15" th:field="*{aPaterno}" style="text-transform: uppercase"  placeholder="Apellido Paterno" type="text" class="form-control" id="inputap" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputam">Apellido Materno</label>
+                    <input maxlength="10" th:field="*{aMaterno}" style="text-transform: uppercase" type="text"  placeholder="Apellido Materno" class="form-control" id="inputam" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label >Contraseña</label>
+                    <input type="password" class="form-control" name="password" id="password"  placeholder="INCLUYA CARACTERES ESPECIALES,MINÚSCULAS Y MAYÚSCULAS"/>
+                </div>
+                <div class="form-group col-md-6">
+                    <label >Confirmar contraseña</label>
+                    <input type="password" th:field="*{contrasena}" class="form-control" name="cfmPassword" id="cfmPassword"  placeholder="INCLUYA CARACTERES ESPECIALES,MINÚSCULAS Y MAYÚSCULAS"/>
+                </div>
+            </div>
+            <div class="card-footer " style="text-align: center">
+                <input type="submit" value="Guardar" class="btn btn-info">
+            </div>
         </form>
     </div>
 
@@ -119,7 +114,7 @@
 
         },
         messages:{
-            password: {
+                        password: {
                 required:"Contraseña Requerida",
                 minlength: "Minimo 6 caracteres",
                 maxlength: "Maximo 15 caracteres"

@@ -8,9 +8,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> -->
+
+
+    <!--FontAwesome -->
+    <script src="https://kit.fontawesome.com/f4e6174eab.js" crossorigin="anonymous"></script>
+
+
+
 </head>
 <body style=" background: #dae1e7;">
     <div class="row" style="background: #07d7e3;font-family: 'Oswald';color: white;text-shadow: 1px 1px 1px #000000;">
@@ -25,17 +32,40 @@
         <a class=""data-toggle="tooltip" data-placement="left" title="Principal"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;text-shadow: 1px 1px 1px #000000; top: 33px; right: 0; font-size: 10px; margin: 0px;padding: 0px;"><img th:src="@{principal.png}" height="30" width="30"/></button></a>
         <!--<a class=""data-toggle="tooltip" data-placement="left" title="Imprimir"><button type="button" class="btn btn-dark btn-xs" style="position: absolute;font-size: 10px;top: 66px; right: 0;margin: 0px;padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{impresora.png}" height="30" width="30"/></button></a>-->
     </div>
-    <div class="row bg-dark d-flex flex-row-reverse" >
-        <div class="form-inline col-9" style="font-family: 'Oswald';font-size: 22px;text-shadow: 1px 1px 1px #000000;text-align: center">
-            <label style="text-align: center;padding-left: 605px">Agregar Paciente</label>
+    <div class="row bg-dark justify-content-between">
+        <ul class="nav nav-tabs" role="tablist" style="font-family: 'Oswald', sans-serif; text-align: center;text-shadow: 1px 0px 0px #000000;">
+            <li class="nav-item" >
+                <a class="nav-link activeb bg-dark" data-toggle="tab" href="#home" style="color: white;"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bg-dark" data-toggle="tab" href="#menu1" style=";color: white;"></a>
+            </li>
+        </ul>
+
+        <div class="form-inline">
+            <a class="" href="/nuevoPaciente" data-toggle="tooltip" data-placement="left" title="Agregar Paciente"><button  type="button" class="btn btn-dark " style="font-size: 10px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{add_50px.png}" height="25" width="25"/></button></a>
+            <input class="form-control mr-sm-2 " style="top: 105px; right: 35px;font-size: 10px; margin-right: auto" type="search" placeholder="Buscar" aria-label="Search">
+            <a class="btn btn-dark btn-xs" style="text-shadow: 1px 1px 1px #000000;top: 105px; margin-right: 5px"><img th:src="@{buscar.png}" height="30" width="30"/></a>
         </div>
-        <form class="form-inline col-3">
-            <a class="" href="http://localhost:8080/nuevoPaciente" data-toggle="tooltip" data-placement="left" title="Agregar Paciente"><button  type="button" class="btn btn-dark " style="font-size: 10px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{add_50px.png}" height="25" width="25"/></button></a>
-            <a href="http://localhost:8080/"></a>
-            <input class="form-control " type="search" placeholder="Buscar" aria-label="Search">
-            <a class="btn btn-dark btn-xs" style=" padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{buscar.png}" height="30" width="30"/></a>
-        </form>
     </div>
+
+    <h2 style="text-align:center;font-family: 'Oswald">AgregarPaciente</h2>
+
+
+
+    <!--<div class="row bg-dark">
+      <div class="form-inline col-9" style="font-family: 'Oswald';font-size: 22px;text-shadow: 1px 1px 1px #000000;text-align: center">
+         <label style="text-align: center;color: white;padding-left: 605px">Agregar Paciente</label>
+     </div>
+
+
+     <form class="form-inline col-3" style="margin-right: 0px">
+         <a class="" href="http://localhost:8080/nuevoPaciente" data-toggle="tooltip" data-placement="left" title="Agregar Paciente"><button  type="button" class="btn btn-dark " style="font-size: 10px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{add_50px.png}" height="25" width="25"/></button></a>
+         <a href="http://localhost:8080/"></a>
+         <input class="form-control " type="search" placeholder="Buscar" aria-label="Search">
+         <a class="btn btn-dark btn-xs" style=" padding: 0px;text-shadow: 1px 1px 1px #000000;"><img th:src="@{buscar.png}" height="30" width="30"/></a>
+     </form>
+ </div>-->
     <!--
     <div class="row" style="font-family: 'Oswald';font-size: 22px;text-shadow: 1px 1px 1px #000000; ">
         <label style="text-align: center;padding-left: 605px">Agregar Paciente</label>
@@ -44,23 +74,30 @@
     <form th:action="@{/guardarPaciente}" th:object="${patients}" method="POST" class="m-5" style="font-family: 'Oswald';">
        <!-- <input th:field="*{id}"  type="hidden" class="form-control">-->
         <div class="form-row">
+            <a href="/listarPacientes" class="btn btn-info" role="button" ><i class="far fa-arrow-alt-circle-left"></i>Regresar</a>
+            <input class="btn btn-secondary" type="reset" value="Borrar información" style="margin-left: 5px;">
+            <div class="col-sm-1">
+                <button  th:field="*{id}"  type="text" class="form-control" style="display: none"/>
+            </div>
+        </div>
+        <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="inputnombre">Nombre</label>
-                <input th:field="*{nombre}" type="text" class="form-control" id="inputnombre" placeholder="Nombre(s)" required="">
+                <input th:field="*{nombre}" type="text" class="form-control" id="inputnombre" placeholder="NOMBRE(S)" required="">
                 <small id="passwordHelpInline" class="text-muted">
                     Máximo 50 caracteres
                 </small>
             </div>
             <div class="form-group col-md-4">
                 <label for="inputap">Apellido Paterno</label>
-                <input th:field="*{a_Paterno}" type="text" class="form-control" id="inputap" placeholder="Apellido Paterno"required="">
+                <input th:field="*{a_Paterno}" style="text-transform: uppercase" type="text" class="form-control" id="inputap" placeholder="Apellido Paterno"required="">
                 <small id="passwordHelpInline2" class="text-muted">
                     Máximo 50 caracteres
                 </small>
             </div>
             <div class="form-group col-md-4">
                 <label for="inputam">Apellido Materno</label>
-                <input th:field="*{a_Materno}" type="text" class="form-control" id="inputam" placeholder="Apellido Materno" required="">
+                <input th:field="*{a_Materno}" style="text-transform: uppercase" type="text" class="form-control" id="inputam" placeholder="Apellido Materno" required="">
                 <small id="passwordHelpInline3" class="text-muted">
                     Máximo 50 caracteres
                 </small>
@@ -75,26 +112,30 @@
 
                 <label> Estado Civil </label>
                 <select  class="form-control" name="edocivil" th:field="*{edocivil}" required>
-                    <option value="">Seleccionar</option>
-                    <option value="Soltero(a)">Soltero(a)</option>
-                    <option value="Casado(a)">Casado(a)</option>
+                    <option value="">SELECCIONAR</option>
+                    <option value="SOLTERO(A)">SOLTERO(A)</option>
+                    <option value="CASADO(A)">CASADO(A)</option>
+                    <option value="DIVORCIADO(A)">DIVORCIADO(A)</option>
+                    <option value="SEPARADO(A)">SEPARADO(A)</option>
+                    <option value="VIUDO(A)">VIUDO(A)</option>
+                    <option value="UNIÓN LIBRE">UNIÓN LIBRE</option>
                 </select>
             </div>
 
             <div class="form-group col-md-3">
                 <label>Fecha de Nacimiento</label>
-                <input th:field="*{fnacimiento}" type="date" class="form-control"min="99-12-01" required="">
+                <input th:field="*{fnacimiento}" type="date" class="form-control"min="99-12-01" required>
             </div>
             <div class="form-group col-md-3">
                 <label>Lugar de Nacimiento</label>
-                <input th:field="*{lnacimiento}" type="text" class="form-control" placeholder="Lugar de nacimiento"  required="">
+                <input th:field="*{lnacimiento}" style="text-transform: uppercase"  type="text" class="form-control" placeholder="Lugar de nacimiento"  required>
                 <small id="passwordHelpInline4" class="text-muted">
                     Máximo 25 caracteres
                 </small>
             </div>
             <div class="form-group col-md-3">
                 <label>Ciudad</label>
-                <input th:field="*{ciudad}" type="text" class="form-control" placeholder="Lugar donde radica" required="">
+                <input th:field="*{ciudad}" style="text-transform: uppercase"  type="text" class="form-control" placeholder="Lugar donde radica" required>
                 <small id="passwordHelpInline6" class="text-muted">
                     Máximo 25 caracteres
                 </small>
@@ -104,7 +145,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Dirección</label>
-                <input th:field="*{direccion}" type="text" class="form-control" placeholder="Calle no. Fraccionamiento,Colonia"required="">
+                <input th:field="*{direccion}" style="text-transform: uppercase"  type="text" class="form-control" placeholder="Calle no. Fraccionamiento,Colonia"required>
                 <small id="passwordHelpInline5" class="text-muted">
                     Máximo 50 caracteres
                 </small>
@@ -112,14 +153,14 @@
 
             <div class="form-group col-md-3">
                 <label>Ocupación</label>
-                <input th:field="*{ocupacion}" type="text" class="form-control" placeholder="Hogar,estudiante,empleado,etc" required="">
+                <input th:field="*{ocupacion}" style="text-transform: uppercase" class="form-control" placeholder="Hogar,estudiante,empleado,etc" required>
                 <small id="passwordHelpInline7" class="text-muted">
                     Máximo 25 caracteres
                 </small>
             </div>
             <div class="form-group col-md-3">
                 <label>Teléfono</label>
-                <input th:field="*{telefono}" type="text" class="form-control"  placeholder="(686) 5555-555" required="">
+                <input th:field="*{telefono}" style="text-transform: uppercase" class="form-control"  placeholder="(686) 5555-555" required>
                 <small id="passwordHelpInline8" class="text-muted">
                     Máximo 10 caracteres
                 </small>
